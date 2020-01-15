@@ -1,13 +1,15 @@
 ---
-title: Intel CPU漏洞原因猜想及解决方案
+title: Intel CPU 漏洞原因猜想及解决方案
 date: 2018-01-16 20:16:49
 tags: 'Computer Architecture'
+categories: 'Computer Architecture'
 ---
 ### Update Jan 16th 学者不可以不深思而慎取之
 昨晚请教了龙芯的老师和同学，可以肯定三件事：
 + 龙芯处理器从微结构设计上对 Meltdown 免疫。
 + Intel 处理器被 Meltdown 攻击，是访存逻辑设计缺陷造成的。
 + 目前任何采用“乱序执行”技术的处理器理论上都无法避免 Spectre 的攻击。
+<!-- more -->
 
 龙芯之所以能够对 Meltdown 免疫，是因为龙芯处理器即使是在乱序执行时，也只执行合法的 load 指令。而 Intel 的处理器则是“不管三七二十一”，遇到访存指令就执行，这么做就给了 Meltdown 可乘之机。
 

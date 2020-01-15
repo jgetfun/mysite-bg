@@ -2,9 +2,11 @@
 title: Meltdown 简单分析
 date: 2018-01-10 19:45:29
 tags: 'Computer Architecture'
+categories: 'Computer Architecture'
 ---
 ### Update Jan 10th：对 Intel 漏洞的猜测
 假如 Intel 的乱序执行是指令不提交不报错，那么第4条指令越界取值到 rax'（重命名寄存器中的 rax 中间值），只要第4条不提交，第5条就根据 rax' 的值继续走，第6条指令接着走。然后 rbx' 坐等 probe 数组中部分数据进 cache（第7条指令）……
+<!-- more -->
 
 此时 ROB 中的第4条提交，CPU 更新状态寄存器示错，操作系统 kill 掉当前恶意进程（所有从上一条指令提交开始，到第4条指令提交结束期间，重命名寄存器中的所有中间值，比如 rax'、坐等数据的 rbx' 等都“无效+释放”，未完成的各种访存操作都“应该”取消）。
 

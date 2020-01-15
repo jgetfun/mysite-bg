@@ -121,12 +121,12 @@ scheme: Gemini
 # External url should start with http:// or https://
 menu:
   home: / || home
-  #tags: /tags/ || tags
-  #categories: /categories/ || th
+  categories: /categories/ || th
   archives: /archives/ || archive
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
+  #tags: /tags/ || tags
   about: /about/ || user
 
 # Enable / Disable menu icons / item badges.
@@ -174,15 +174,16 @@ avatar:
   rotated: false
 
 # Posts / Categories / Tags in sidebar.
-site_state: true
+site_state: false
 
 # Social Links
 # Usage: `Key: permalink || icon`
 # Key is the link label showing to end users.
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
-  GitHub: https://github.com/itsjnk || github
+  Github: https://github.com/itsjnk || github
   E-Mail: mailto:its@jnkuo.com || envelope
+  Zhihu: https://zhihu.com/people/jnkuo || user
   #Weibo: https://weibo.com/yourname || weibo
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
@@ -194,19 +195,21 @@ social:
   #RSS: /atom.xml || rss
 
 social_icons:
-  enable: false
-  icons_only: false
+  enable: true
+  icons_only: true
   transition: false
 
 # Blog rolls
 links_settings:
-  icon: link
-  title: Links
+  icon: address-book
+  title: 'Great Blogs'
   # Available values: block | inline
   layout: block
 
 links:
-  #Title: http://yoursite.com
+  Skywind Inside: http://www.skywind.me/blog/
+  风云的Blog: https://blog.codingnow.com
+  王垠的Blog: https://www.yinwang.org/
 
 # Table of Contents in the Sidebar
 # Front-matter variable (unsupport wrap expand_all).
@@ -241,15 +244,15 @@ excerpt_description: true
 
 # Read more button
 # If true, the read more button will be displayed in excerpt section.
-read_more_btn: true
+read_more_btn: false
 
 # Post meta display settings
 post_meta:
   item_text: true
   created_at: true
   updated_at:
-    enable: true
-    another_day: true
+    enable: false
+    another_day: false
   categories: true
 
 # Post wordcount display settings
@@ -262,7 +265,7 @@ symbols_count_time:
   wpm: 275
 
 # Use icon instead of the symbol # to indicate the tag at the bottom of the post
-tag_icon: false
+tag_icon: true
 
 # Reward (Donate)
 # Front-matter variable (unsupport animation).
